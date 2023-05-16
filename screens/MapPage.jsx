@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const MapPage = () => {
+export const MapPage = () => {
   return (
     <View>
       <Text>MapPage</Text>
@@ -9,4 +9,4 @@ const MapPage = () => {
   )
 }
 
-export default MapPage
+// export default MapPage

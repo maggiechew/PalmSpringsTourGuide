@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const FriendsScreen = () => {
+export const FriendsScreen = () => {
   return (
     <View>
       <Text>FriendsScreen</Text>
@@ -9,4 +9,4 @@ const FriendsScreen = () => {
   )
 }
 
-export default FriendsScreen
+// export default FriendsScreen
