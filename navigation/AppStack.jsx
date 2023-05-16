@@ -21,8 +21,8 @@ export const AppStack = () => {
         name='Map'
         component={MapPage}
         options={{
-          title: 'Egg Hunter Map',
-          headerTitleStyle: { color: 'gold', fontFamily: 'Lobster-Regular' },
+          title: 'Palm Springs Tour Guide',
+          headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
           headerStyle: { backgroundColor: `#111111` }
         }}
       />
@@ -46,7 +46,7 @@ export const AppStack = () => {
         name='MyEggs'
         component={MyEggsScreen}
         options={{
-          headerTitleStyle: { color: 'gold', fontFamily: 'Lobster-Regular' },
+          headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
           headerStyle: { backgroundColor: `#111111` },
           headerLeft: () => (
             <TouchableOpacity
@@ -62,7 +62,7 @@ export const AppStack = () => {
         name='Content'
         component={ContentScreen}
         options={{
-          headerTitleStyle: { color: 'gold', fontFamily: 'Lobster-Regular' },
+          headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
           headerStyle: { backgroundColor: `#111111` },
           headerLeft: () => (
             <TouchableOpacity
