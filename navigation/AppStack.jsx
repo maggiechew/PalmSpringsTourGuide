@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import { MapPage } from '../screens';
+import MapPage from '../screens/MapPage';
 import { AccountScreen } from '../screens/AccountScreen';
 import { FriendsScreen } from '../screens/FriendsScreen.jsx';
-// import { MyEggsScreen } from '../screens/MyEggsScreen';
+import { MySitesScreen } from '../screens/MySitesScreen';
 import { useNavigation } from '@react-navigation/native';
 import { ContentScreen } from '../screens/ContentScreen';
 
@@ -16,20 +16,20 @@ export const AppStack = () => {
   const navigation = useNavigation();
 
   return (
-    <Stack.Navigator initialRouteName='Login'>
+    <Stack.Navigator initialRouteName="Login">
       <Stack.Screen
-        name='Map'
+        name="Map"
         component={MapPage}
         options={{
           title: 'Palm Springs Tour Guide',
           headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
-          headerStyle: { backgroundColor: `#111111` }
+          headerStyle: { backgroundColor: `#111111` },
         }}
       />
 
-      <Stack.Screen name='Account' component={AccountScreen} />
+      <Stack.Screen name="Account" component={AccountScreen} />
       <Stack.Screen
-        name='Friends'
+        name="Friends"
         component={FriendsScreen}
         options={{
           headerLeft: () => (
@@ -37,14 +37,14 @@ export const AppStack = () => {
               style={styles.backButton}
               onPress={() => navigation.goBack()}
             >
-              <Entypo name='chevron-left' size={24} color={`#111111`} />
+              <Entypo name="chevron-left" size={24} color={`#111111`} />
             </TouchableOpacity>
-          )
+          ),
         }}
       />
-      {/* <Stack.Screen
-        name='MyEggs'
-        component={MyEggsScreen}
+      <Stack.Screen
+        name="MySites"
+        component={MySitesScreen}
         options={{
           headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
           headerStyle: { backgroundColor: `#111111` },
@@ -53,13 +53,13 @@ export const AppStack = () => {
               style={styles.backButton}
               onPress={() => navigation.goBack()}
             >
-              <Entypo name='chevron-left' size={24} color='gold' />
+              <Entypo name="chevron-left" size={24} color="gold" />
             </TouchableOpacity>
-          )
+          ),
         }}
-      /> */}
+      />
       <Stack.Screen
-        name='Content'
+        name="Content"
         component={ContentScreen}
         options={{
           headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
@@ -69,9 +69,9 @@ export const AppStack = () => {
               style={styles.backButton}
               onPress={() => navigation.goBack()}
             >
-              <Entypo name='chevron-left' size={24} color='gold' />
+              <Entypo name="chevron-left" size={24} color="gold" />
             </TouchableOpacity>
-          )
+          ),
         }}
       />
     </Stack.Navigator>
@@ -80,6 +80,6 @@ export const AppStack = () => {
 
 const styles = StyleSheet.create({
   backButton: {
-    marginLeft: 16
-  }
+    marginLeft: 16,
+  },
 });

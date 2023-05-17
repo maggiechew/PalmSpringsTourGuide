@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     marginRight: 25,
     marginTop: 0
   },
-  eggName: {
+  siteName: {
     fontSize: 16,
     marginLeft: 15,
     marginTop: 15,
@@ -70,13 +70,13 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   avatarButtonText: {
-    fontFamily: 'SSBold',
+    fontFamily: 'RWBold',
     fontSize: 16,
     color: 'white',
-    weight: 'bold'
+    // weight: 'bold'
   },
   avatarButtonClose: {
-    fontFamily: 'SSBold',
+    fontFamily: 'RWBold',
     alignItems: 'flex-end',
     bottom: 240,
     marginVertical: 5
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   tutorialText: {
     color: 'white'
   },
-  newEggBodyText: {
+  newSiteBodyText: {
     textAlign: 'center',
     color: 'white'
   },
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'gold'
   },
-  newEggContainer: {
+  newSiteContainer: {
     alignItems: 'center'
   },
   closeX: {
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     padding: 0,
     bottom: 0
   },
-  eggIconTutorial: {
+  siteIconTutorial: {
     width: 28,
     height: 28
   },

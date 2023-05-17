@@ -57,8 +57,8 @@ export const AuthenticatedUserProvider = ({ children }) => {
       firstname: firstname,
       lastname: lastname,
       email: email,
-      discoveredEggs: [],
-      likedEggs: [],
+      discoveredSites: [],
+      favoriteSites: [],
       friends: [],
       seenTutorial: false
     });

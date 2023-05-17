@@ -14,7 +14,7 @@ export const HomePage = ({ navigation }) => (
         entering={BounceIn.delay(500)}
         style={styles.textContainer}
       >
-        <Text style={styles.text}>EGG HUNTER YYC</Text>
+        <Text style={styles.text}>Palm Springs Tour Guide</Text>
       </Animated.View>
       <Animated.View
         entering={FadeIn.delay(1200)}

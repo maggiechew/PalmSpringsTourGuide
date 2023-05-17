@@ -14,8 +14,8 @@ import { AvatarPickContext } from '../providers/AvatarPickProvider';
 export const SignupScreen = ({ navigation }) => {
   const authContext = useContext(AuthenticatedUserContext);
   const { user, handleSignup, errorState } = authContext;
-  const avatarConxt = useContext(AvatarPickContext);
-  const { picture, pickImage } = avatarConxt;
+  const avatarContext = useContext(AvatarPickContext);
+  const { picture, pickImage } = avatarContext;
 
   const {
     passwordVisibility,
@@ -29,7 +29,7 @@ export const SignupScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAwareScrollView enableOnAndroid={true}>
-        {/* LogoContainer: consits app logo and screen title */}
+        {/* LogoContainer: consists of app logo and screen title */}
         <View style={styles.logoContainer}>
           <Text style={styles.screenTitle}>Create a new account</Text>
         </View>
@@ -72,8 +72,8 @@ export const SignupScreen = ({ navigation }) => {
                 leftIconName='account'
                 placeholder='First name'
                 autoCapitalize='none'
-                keyboardType='text'
-                textContentType='firstName'
+                keyboardType='default'
+                textContentType='givenName'
                 value={values.firstname}
                 onChangeText={handleChange('firstname')}
                 onBlur={handleBlur('firstname')}
@@ -87,8 +87,8 @@ export const SignupScreen = ({ navigation }) => {
                 leftIconName='account'
                 placeholder='Last name'
                 autoCapitalize='none'
-                keyboardType='text'
-                textContentType='lastName'
+                keyboardType='default'
+                textContentType='familyName'
                 value={values.lastname}
                 onChangeText={handleChange('lastname')}
                 onBlur={handleBlur('lastname')}
@@ -102,7 +102,7 @@ export const SignupScreen = ({ navigation }) => {
                 leftIconName='email'
                 placeholder='Enter email'
                 autoCapitalize='none'
-                keyboardType='email-address'
+                keyboardType='default'
                 textContentType='emailAddress'
                 autoFocus={true}
                 value={values.email}
@@ -161,7 +161,7 @@ export const SignupScreen = ({ navigation }) => {
         <Button
           style={styles.borderlessButtonContainer}
           borderless
-          title={'Already have an account?'}
+          title={'Sign in to an existing account'}
           onPress={() => navigation.navigate('Login')}
         />
       </KeyboardAwareScrollView>
