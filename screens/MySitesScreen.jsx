@@ -56,20 +56,6 @@ function ImagesFavoriteSites() {
     }
   }, [userFavoriteSites]);
 
-  // const getCreator = async (creatorID) => {
-  //   const creatorRef = doc(db, 'creators', creatorID);
-  //   const docSnap = await getDoc(creatorRef);
-  //   if (!docSnap.exists) {
-  //   } else {
-  //     const creatorData = docSnap.data();
-  //     return {
-  //       creatorName: creatorData.creatorName,
-  //       creatorAvatarURI: creatorData.creatorAvatarURI,
-  //       creatorBlurb: creatorData.creatorBlurb,
-  //     };
-  //   }
-  // };
-
   return (
     <View style={{}}>
       <View
@@ -83,8 +69,6 @@ function ImagesFavoriteSites() {
           <TouchableHighlight
             key={index}
             onPress={async () => {
-              // const creatorInfo = await getCreator(site.creatorID);
-              // const combinedSite = { Site: site, Creator: creatorInfo };
               setCurrentSite(site);
               navigation.navigate('Content', { fromMySites: true });
             }}
@@ -92,8 +76,8 @@ function ImagesFavoriteSites() {
             <Image
               style={{ width: imgWidth, height: imgWidth }}
               source={
-                site.siteURIs?.imageURI
-                  ? { uri: site.siteURIs.imageURI }
+                site.siteURIs?.imageURIs
+                  ? { uri: site.siteURIs.imageURIs[0].URI }
                   : require('../assets/defaultavatar.jpg')
               }
             />
@@ -159,8 +143,8 @@ function ImagesDiscoveredSites() {
                   tintColor: '#616161',
                 }}
                 source={
-                  site.siteURIs?.imageURI
-                    ? { uri: site.siteURIs.imageURI }
+                  site.siteURIs?.imageURIs
+                    ? { uri: site.siteURIs.imageURIs[0].URI }
                     : require('../assets/defaultavatar.jpg')
                 }
               />
@@ -173,8 +157,8 @@ function ImagesDiscoveredSites() {
                   opacity: 0.2,
                 }}
                 source={
-                  site.siteURIs?.imageURI
-                    ? { uri: site.siteURIs.imageURI }
+                  site.siteURIs?.imageURIs
+                    ? { uri: site.siteURIs.imageURIs[0].URI }
                     : require('../assets/defaultavatar.jpg')
                 }
               />

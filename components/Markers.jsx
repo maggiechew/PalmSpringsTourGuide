@@ -14,29 +14,11 @@ export const Markers = ({ zoneSites, sitesInRange }) => {
   const { currentSite, setCurrentSite, setShowModal, setModalType } =
     useContext(SiteUserContext);
 
-  // const getCreator = async (creatorID) => {
-  //   const creatorRef = doc(db, 'creators', creatorID);
-  //   const docSnap = await getDoc(creatorRef);
-  //   if (!docSnap.exists) {
-  //     console.log('oh snap')
-  //   } else {
-  //     const creatorData = docSnap.data();
-  //     return {
-  //       creatorName: creatorData.creatorName,
-  //       creatorAvatarURI: creatorData.creatorAvatarURI,
-  //       creatorBlurb: creatorData.creatorBlurb
-  //     };
-  //   }
-  // };
 
   const newContent = async (site) => {
     await updateDoc(doc(db, 'users', userID), {
       discoveredSites: arrayUnion(site.id)
     });
-    console.log('I got here')
-    // const creatorInfo = await getCreator(site.creatorID);
-    // console.log("Creator Info is:", creatorInfo)
-    // const combinedSite = { Site: site, Creator: creatorInfo };
     setCurrentSite(site);
     setModalType('newSite');
     setShowModal(true);
@@ -44,10 +26,8 @@ export const Markers = ({ zoneSites, sitesInRange }) => {
 
   const oldContent = async (site) => {
     if (site !== currentSite) {
-      // const creatorInfo = await getCreator(site.creatorID);
-      // const combinedSite = { Site: site, Creator: creatorInfo };
-      // setCurrentSite(combinedSite);
       setCurrentSite(site);
+      console.log('SITE IS NOW', site)
     }
   };
 
@@ -56,7 +36,6 @@ export const Markers = ({ zoneSites, sitesInRange }) => {
   };
 
   return zoneSites?.map((site) => {
-    // console.log('site is', site)
     let locked = true;
     let discovered = false;
     if (sitesInRange?.find((foundSite) => foundSite.id === site.id)) locked = false;

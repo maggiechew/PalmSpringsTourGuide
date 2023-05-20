@@ -7,29 +7,21 @@ import { StyleSheetContext } from '../providers/StyleSheetProvider';
 export const SiteContent = () => {
   const { currentSite } = useContext(SiteUserContext);
   const styles = useContext(StyleSheetContext);
-  const site = currentSite;
-  console.log(site);
-
-//   const LeftContent = () => (
-//     <Avatar.Image size={40} source={{ uri: creator.creatorAvatarURI }} />
-//   );
 
   return (
     <View>
       <View style={styles.card}>
         <Card mode="elevated">
           <Card.Title
-            title={site.siteName}
-            // subtitle={creator.creatorName}
+            title={currentSite.siteName}
             subtitleNumberOfLines={2}
-            // left={LeftContent}
           />
           <Card.Content>
             <Text variant="bodyMedium" style={styles.shortDescription}>
-              {site.siteBlurb}
+              {currentSite.siteDescription}
             </Text>
-            {site.siteURIs.imageURI ? (
-              <Card.Cover source={{ uri: site.siteURIs.imageURI }} />
+            {currentSite.siteURIs.imageURIs ? (
+              <Card.Cover source={{ uri: currentSite.siteURIs.imageURIs[0].URI }} />
             ) : (
               <Card />
             )}
