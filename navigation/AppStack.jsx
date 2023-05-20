@@ -74,6 +74,24 @@ export const AppStack = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="ImageCard"
+        component={ImageCard}
+        options={{
+          headerTitleStyle: { color: 'gold', fontFamily: 'Limelight-Regular' },
+          headerStyle: { backgroundColor: `#111111` },
+          headerLeft: () => (
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => {
+                changeScreenOrientation();
+                navigation.goBack()}}
+            >
+              <Entypo name="chevron-left" size={24} color="gold" />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </Stack.Navigator>
   );
 };
