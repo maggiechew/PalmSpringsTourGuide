@@ -9,6 +9,8 @@ import {
   View,
   Text,
 } from 'react-native';
+import { useIsFocused } from '@react-navigation/native';
+import * as ScreenOrientation from 'expo-screen-orientation';
 import MapView from 'react-native-maps';
 import { Avatar } from 'react-native-paper';
 import AvatarMenu from '../components/AvatarMenu';
@@ -28,6 +30,8 @@ import { mapStyle } from '../components/MapStyle';
 const MapPage = ({ navigation, children }) => {
   const [arrayOfZones, setArrayOfZones] = useState();
   const [showMenu, setShowMenu] = useState(false);
+  const isFocused=useIsFocused();
+
 
   const {
     setCurrentSite,
@@ -56,6 +60,19 @@ const MapPage = ({ navigation, children }) => {
     const sites = await siteTotalFetch();
     setUserStats({ ...userStats, everySite: sites });
   }
+
+  async function changeScreenOrientation() {
+    ScreenOrientation.lockAsync(
+      ScreenOrientation.OrientationLock.PORTRAIT
+    );
+  }
+
+  useEffect(() => {
+    if(isFocused) {
+      changeScreenOrientation();
+    }
+  },[isFocused])
+
 
   useEffect(() => {
     async function _getZones() {

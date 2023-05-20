@@ -7,13 +7,22 @@ import { FriendsScreen } from '../screens/FriendsScreen.jsx';
 import { MySitesScreen } from '../screens/MySitesScreen';
 import { useNavigation } from '@react-navigation/native';
 import { ContentScreen } from '../screens/ContentScreen';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 import { Entypo } from '@expo/vector-icons';
+import ImageCard from '../screens/ImageCard';
 
 const Stack = createStackNavigator();
 
 export const AppStack = () => {
   const navigation = useNavigation();
+
+  async function changeScreenOrientation() {
+    ScreenOrientation.lockAsync(
+      ScreenOrientation.OrientationLock.PORTRAIT
+    );
+  }
+
 
   return (
     <Stack.Navigator initialRouteName="Login">
