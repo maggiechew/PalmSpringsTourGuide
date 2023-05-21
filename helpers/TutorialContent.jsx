@@ -25,7 +25,7 @@ const TutorialContent = () => {
     <View>
       <Text style={styles.tutorialTitle}>Welcome to Palm Springs Tour Guide!</Text>
       <Text style={styles.tutorialText}>
-        Use the map to find hidden "site zones" all around the area...
+        Use the map to find hidden sites all around the area...
       </Text>
       <Text style={styles.tutorialText}>Happy hunting!</Text>
     </View>

@@ -7,7 +7,7 @@ import { Alert } from 'react-native';
 import { AuthenticatedUserContext } from '../providers';
 import { SiteUserContext } from '../providers/SiteSoundProvider';
 
-export const Markers = ({ zoneSites, sitesInRange }) => {
+export const Markers = ({ allSites, sitesInRange }) => {
   const { userInfo, user } = useContext(AuthenticatedUserContext);
   const userSites = userInfo.discoveredSites;
   const userID = user.uid;
@@ -35,7 +35,7 @@ export const Markers = ({ zoneSites, sitesInRange }) => {
     Alert.alert(`I'm locked!`);
   };
 
-  return zoneSites?.map((site) => {
+  return allSites?.map((site) => {
     let locked = true;
     let discovered = false;
     if (sitesInRange?.find((foundSite) => foundSite.id === site.id)) locked = false;
