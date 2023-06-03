@@ -16,8 +16,6 @@ const ImageCard = ({ navigation, route }) => {
   const imgURI = route.params.imgInfo[0];
   const imgDesc = route.params.imgInfo[1];
   const imgTitle = route.params.imgInfo[2];
-  const test =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum, elit quis mattis commodo, mauris augue tincidunt libero, id porta est lorem nec nunc. Praesent varius vel massa eu consectetur. Etiam dignissim sit amet libero quis posuere. Donec et semper lacus. Suspendisse sodales facilisis odio, eget finibus quam mollis sed. Vivamus vestibulum convallis sapien, nec dictum nisl tempus dictum. Pellentesque bibendum a lacus in fringilla. Donec vitae diam et metus accumsan vehicula. In a enim urna. Nulla volutpat nisl at urna fringilla, id consectetur odio ullamcorper. Aliquam tincidunt tempus dignissim. Vivamus massa nisl, pharetra sit amet consequat at, maximus vitae felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat, sem quis placerat efficitur, turpis ligula congue neque, eget faucibus nulla purus at orci. Ut vulputate, neque quis laoreet cursus, dui massa pulvinar velit, non dapibus arcu purus vitae quam. Ut pulvinar hendrerit risus, sit amet vestibulum nulla laoreet eu. Sed egestas imperdiet leo, et porttitor nisl rutrum in. Fusce condimentum eros in ex viverra, quis ullamcorper ante condimentum. Sed efficitur metus neque, quis ullamcorper diam tempor eu. Etiam ut ipsum a erat dictum volutpat. Ut lobortis quis erat vel viverra. Mauris ornare bibendum risus, eget vehicula mauris vestibulum non. Integer luctus dapibus metus et pellentesque. Aenean et ante risus. Integer ac dolor nunc. Mauris mollis turpis sed consequat tincidunt. Cras purus nisi, efficitur eget ante varius, commodo molestie risus. Phasellus scelerisque at ex id fringilla.';
   const bottomSheetRef = useRef(null);
 //   const handleSheetChanges = useCallback((index) => {
 //     console.log('handleSheetChanges', index);
@@ -30,7 +28,8 @@ const ImageCard = ({ navigation, route }) => {
 
   useEffect(() => {
     const charLen = imgDesc.length;
-    const suggestedInt = Math.ceil(charLen / 100) * 5 + 15;
+    const suggestedInt = Math.ceil(charLen / 100) * 5 + 20;
+    console.log(suggestedInt)
 
     suggestedInt > 100? setUpperSnap(100) : setUpperSnap(suggestedInt)
   }, []);

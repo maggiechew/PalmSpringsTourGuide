@@ -160,26 +160,30 @@ const AudioPlayer = ({ contentButton, contentScreen, fromMySites }) => {
   };
 
   return (
-    <View style={contentButton ? styles.modal : styles.modalSmall}>
-      {!currentSite ? (
+    // <View style={contentButton ? styles.modal : styles.modalSmall}>
+    <View style={styles.modal}>
+    <Text style={styles.siteName}>{currentSite.siteName}</Text>
+      {/* {!currentSite ? (
         <Text style={styles.siteName}>'No site loaded'</Text>
       ) : contentButton ? (
         <Text style={styles.siteName}>{currentSite.siteName}</Text>
       ) : (
         <></>
-      )}
+      )} */}
       <View style={styles.audioPlayer}>
         {contentButton ? (
           <Animated.View style={testAnimation}>
             <IconButton
-              icon='egg-outline'
+              icon='sunglasses'
               iconColor='gold'
               containerColor={`#111111`}
+              style={{'marginTop':-10, 'marginBottom':0, 'paddingLeft':6}}
               onPress={() => {
                 navigation.navigate('Content');
               }}
               size={40}
             />
+            <Text style={styles.learnMore}>Learn more</Text>
           </Animated.View>
         ) : (
           <></>
@@ -188,7 +192,7 @@ const AudioPlayer = ({ contentButton, contentScreen, fromMySites }) => {
         {isPlaying ? (
           <IconButton
             icon='pause-circle'
-            iconColor='gold'
+            iconColor='#f57c00'
             containerColor={`#111111`}
             onPress={() => pausePlayAudio()}
             size={35}
@@ -196,7 +200,7 @@ const AudioPlayer = ({ contentButton, contentScreen, fromMySites }) => {
         ) : (
           <IconButton
             icon='play-circle'
-            iconColor='gold'
+            iconColor='#f57c00'
             containerColor={`#111111`}
             onPress={() => pausePlayAudio()}
             size={35}
@@ -210,7 +214,7 @@ const AudioPlayer = ({ contentButton, contentScreen, fromMySites }) => {
           value={calculateSeekBar()}
           minimumTrackTintColor={'orange'}
           maximumTrackTintColor={'dimgrey'}
-          thumbTintColor={'gold'}
+          thumbTintColor={'#f57c00'}
           onValueChange={async (value) => {
             // await sound.setPositionAsync(value * duration);
             // console.log('2');
@@ -237,7 +241,7 @@ const AudioPlayer = ({ contentButton, contentScreen, fromMySites }) => {
           }}
           step={0.01}
         />
-        <Text style={{ color: 'gold', marginLeft: 8 }}>
+        <Text style={{ color: '#f57c00', marginLeft: 8 }}>
           -{renderCurrentTime()}
         </Text>
       </View>

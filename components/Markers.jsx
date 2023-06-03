@@ -49,12 +49,12 @@ export const Markers = ({ allSites, sitesInRange }) => {
         }}
         icon={
           locked
-            ? require('../assets/eggicon_locked.png')
+            ? require('../assets/red_star.png')
             : discovered
-            ? require('../assets/eggicon_unlocked.png')
-            : require('../assets/eggicon_undiscovered.png')
+            ? require('../assets/green_star.png')
+            : require('../assets/yellow_star.png')
         }
-        // pinColor={locked ? 'red' : discovered ? 'yellow' : 'green'}
+        // pinColor={locked ? 'red' : discovered ? 'gold' : 'green'}
         onPress={() =>
           locked
             ? lockedContent(site)

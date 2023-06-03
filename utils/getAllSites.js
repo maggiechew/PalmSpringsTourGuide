@@ -28,6 +28,6 @@ export const getAllSites = async () => {
   //       ...doc.data(),
   //     };
   //   });
-  console.log('ALL DATA IS', data);
+  // console.log('ALL DATA IS', data);
   return data;
 };

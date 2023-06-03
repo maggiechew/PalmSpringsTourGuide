@@ -57,7 +57,7 @@ export default function AudioSheet() {
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
       backgroundStyle={{ backgroundColor: `#111111` }}
-      handleIndicatorStyle={{ color: 'orange', backgroundColor: 'gold' }}
+      handleIndicatorStyle={{ color: 'orange', backgroundColor: '#f57c00' }}
     >
       {audioURI && (
         <AudioPlayer contentButton contentPage={false} fromMySites={false} />

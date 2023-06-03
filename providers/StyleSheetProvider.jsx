@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
   siteName: {
     fontSize: 16,
     marginLeft: 15,
-    marginTop: 15,
-    marginBottom: -20,
-    color: 'gold'
+    marginTop: 10,
+    marginBottom: -10,
+    color: '#f57c00'
   },
   animationContainer: {},
   avatarModal: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   modalText: {
     fontSize: 16,
-    color: 'gold',
+    color: '#f57c00',
     marginVertical: 5,
     marginLeft: 13,
     fontWeight: 'bold'
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   loginButtonText: {
     fontSize: 16,
-    color: 'gold'
+    color: '#f57c00'
   },
   card: {
     margin: 20,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   tutorialTitle: {
-    color: 'gold'
+    color: '#f57c00'
   },
   tutorialText: {
     color: 'white'
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: -10,
     fontSize: 18,
-    color: 'gold'
+    color: '#f57c00'
   },
   newSiteContainer: {
     alignItems: 'center'
@@ -123,5 +123,13 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28
   },
-  zoneTutorial: {}
+  // zoneTutorial: {},
+  learnMore: {
+    fontSize: 14,
+    // marginLeft: 1,
+    marginTop:-14,
+    // marginTop: 0,
+    paddingTop:0,
+    color: 'gold'
+  },
 });
